@@ -1,0 +1,67 @@
+Create all page design like :  login , register , forget page as well as
+After set all code of auth (login , register , forgot password as set as auth/password/email.blade.php
+
+as well as changes of name all values is of from and all changes like set all pages 
+
+After create and well set values of all input fields than changes value it .
+
+
+
+************************************
+Goto Auth\controller\Logincontoller.php  ==>  know how to changes in file after I goto 
+AuthenticatesUsers.php
+
+This file changes like this : 
+
+1) AuthenticatesUsers Path ==>  peojectname -> vendor -> laravel\ui\auth-backend\AuthenticatesUsers.php
+
+changes :  set her file path 
+
+save changes :   
+
+    public function showLoginForm()
+    {
+        //return view('auth.login');
+        return view('newLogin');
+
+    }
+	
+*******************
+
+Goto Auth\controller\Registercontoller.php  ==>  know how to changes in file after I goto 
+RegistersUsers.php
+
+This file changes like this : 
+
+1) RegistersUsers Path ==>  peojectname -> vendor -> laravel\ui\auth-backend\RegistersUsers.php
+
+changes :  set her file path 
+
+save changes :
+
+    public function showRegistrationForm()
+    {
+        //return view('auth.register');
+        return view('newRegister');
+    }
+
+*******************
+Goto Auth\controller\ForgotPasswordController.php  ==>  know how to changes in file after I goto 
+SendsPasswordResetEmails.php
+
+This file changes like this : 
+
+1) SendsPasswordResetEmails Path ==>  peojectname -> vendor -> laravel\ui\auth-backend\SendsPasswordResetEmails.php
+
+changes :  set her file path 
+
+save changes :
+
+    public function showLinkRequestForm()
+    {
+        //return view('auth.passwords.email');
+        return view('newForget');
+    }
+
+
+*****************************************************************
