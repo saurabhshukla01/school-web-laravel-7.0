@@ -14,41 +14,41 @@
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav ml-auto py-4 py-md-0">
                      <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="{{url('/')}}">Home</a>
                      </li>
                      <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                        <a class="nav-link" href="about-us.html">About Us</a>
+                        <a class="nav-link" href="{{ url('about')}}">About Us</a>
                      </li>
                      <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                        <a class="nav-link" href="news.html">News</a>
+                        <a class="nav-link" href="{{url('news')}}">News</a>
                      </li>
                      <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                        <a class="nav-link" href="events.html">Events</a>
+                        <a class="nav-link" href="{{url('event')}}">Events</a>
                      </li>
                      <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                        <a class="nav-link" href="gallery.html">Gallery</a>
+                        <a class="nav-link" href="{{ url('gallary') }}">Gallary</a>
                      </li>
                      <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                        <a class="nav-link" href="notification.html">Notification</a>
+                        <a class="nav-link" href="{{ url('notification') }}">Notification</a>
                      </li>
                      <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Resource</a>
                         <div class="dropdown-menu">
-                           <a class="dropdown-item" href="404.html">AWARDS</a>
-                           <a class="dropdown-item" href="alumni.html">ALUMNI</a>
+                           <a class="dropdown-item" href="{{ url('awards') }}">AWARDS</a>
+                           <a class="dropdown-item" href="{{ url('alumni') }}">ALUMNI</a>
                         </div>
                      </li>
                      <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
                         <div class="dropdown-menu">
-                           <a class="dropdown-item" href="fee-structure.html">Fee Structure</a>
-                           <a class="dropdown-item" href="faq.html">Faq</a>
-                           <a class="dropdown-item" href="teacher.html">Teacher</a>
-                           <a class="dropdown-item" href="career.html">Career</a>
+                           <a class="dropdown-item" href="{{url('fee-structure') }}">Fee Structure</a>
+                           <a class="dropdown-item" href="{{ url('faq') }}">Faq</a>
+                           <a class="dropdown-item" href="{{url('staff')}}">Teacher</a>
+                           <a class="dropdown-item" href="{{url('carrier')}}">Carrier</a>
                         </div>
                      </li>
                      <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                        <a class="nav-link" href="contact-us.html">Contact</a>
+                        <a class="nav-link" href="{{ url('contact') }}">Contact</a>
                      </li>
                   </ul>
                </div>

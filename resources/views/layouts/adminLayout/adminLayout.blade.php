@@ -96,10 +96,8 @@
       <!-- page script -->
       <script>
          $(function () {
-            $("#brands").DataTable();
-            $("#sections").DataTable();
-            $("#categories").DataTable();
-            $("#products").DataTable();
+            $("#events").DataTable();
+            $("#eventcategory").DataTable();
          });
       </script>
       <!-- ChartJS -->

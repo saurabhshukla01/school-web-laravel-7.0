@@ -18,44 +18,6 @@
       @include('layouts.frontLayout.frontHeader')
       <!--Header End-->
       <!--Banner Start -->
-      <section class="banner bg-dark">
-         <h2 style="display: none;">Banner</h2>
-         <div id="owl-demo" class="owl-carousel owl-theme">
-            <div class="item">
-               <img src="{{ url('frontView/images/slider.jpg') }}" alt="Banner" />
-               <div class="container">
-                  <div class="banner-text text-left">
-                     <h2>Lorem Ipsum Lorem Ipsum</h2>
-                     <h1>Lorem Ipsum Lorem Ipsum</h1>
-                     <h4>Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumLorem</h4>
-                     <a href="#" class="outline-btn banner-btn text-white">Read More</a>
-                  </div>
-               </div>
-            </div>
-            <div class="item">
-               <img src="{{ url('frontView/images/slider2.jpg') }}" alt="Banner" />
-               <div class="container">
-                  <div class="banner-text text-left">
-                     <h2>Lorem Ipsum Lorem Ipsum</h2>
-                     <h1>Lorem Ipsum Lorem Ipsum</h1>
-                     <h4>Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumLorem</h4>
-                     <a href="#" class="outline-btn banner-btn text-white">Read More</a>
-                  </div>
-               </div>
-            </div>
-            <div class="item">
-               <img src="{{ url('frontView/images/slider3.jpg') }}" alt="Banner" />
-               <div class="container">
-                  <div class="banner-text text-left">
-                     <h2>Lorem Ipsum Lorem Ipsum</h2>
-                     <h1>Lorem Ipsum Lorem Ipsum</h1>
-                     <h4>Lorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumLorem Ipsum Lorem IpsumLorem</h4>
-                     <a href="#" class="outline-btn banner-btn text-white">Read More</a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
       <!--Banner End -->
       @yield('content')
       <!-- Footer Start -->

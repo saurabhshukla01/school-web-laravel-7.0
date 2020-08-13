@@ -6,16 +6,16 @@
               <div class="info-details pull-left d-flex mr-3">
                 <i class="fa fa-envelope theme-color icon-outline"></i>
                 <div class="info-text ml-2">
-                  <a href="mailto:info@domain.com">
-                    info@domain.com
+                  <a href="mailto:indo.school0987@co.in">
+                    indo.school0987@co.in
                   </a>
                 </div>
               </div>
               <div class="info-details pull-left d-flex">
                 <i class="fa fa-phone-square theme-color icon-outline"></i>
                 <div class="info-text ml-2">
-                  <a href="tel:123456789">
-                    +1234-567-890
+                  <a href="tel:+91 -767-890-7890">
+                    +91 -767-890-7890
                   </a>
                 </div>
               </div>

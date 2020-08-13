@@ -23,7 +23,10 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="{{url('/')}}"><b>Admin</b>Panel</a>
+    <a href="{{url('/')}}">
+      <img src="{{ asset('adminView/img/sms-logo.jpg') }}" style="width:360px;height:100px;">
+      <strong>SMS Admin Panel</strong>
+    </a>    
   </div>
   <!-- /.login-logo -->
   <div class="card">

@@ -23,86 +23,26 @@ $(document).ready(function () {
 	});
 
 
-	// Update Status in Brands Table Active or Inactive
-	//$(".updateBrandStatus").click(function(){
-	$(document).on("click",".updateBrandStatus",function(e){
+	// Update Status in Event Category Table Active or Inactive
+	//$(".updateEventCategoryStatus").click(function(e){
+	$(document).on("click",".updateEventCategoryStatus",function(e){
 		//var status = $(this).text();
 		var status = $(this).children("i").attr("status");
 		//alert(status); return false;
-		var brand_id = $(this).attr("brand_id");
-		//alert(status +"&&"+brand_id);
-		if(brand_id){
+		var eventCategory_id = $(this).attr("eventCategory_id");
+		// alert(status +"&"+eventCategory_id);
+		if(eventCategory_id){
 			$.ajax({
 				type:'post',
-				url:'/admin/update-brand-status',
-				data:{status:status,brand_id:brand_id},
+				url:'/admin/update-event-category-status',
+				data:{status:status,eventCategory_id:eventCategory_id},
 				success:function(resp){
-					//alert(resp['status']);
-					//alert(resp['brand_id']);
+					// alert(resp['status']);
+					// alert(resp['eventCategory_id']);
 					if(resp['status']==0){
-						$("#brand-"+brand_id).html("<i class='fas fa-toggle-off' aria-hidden='true' title='Inactive' status='Inactive'></i>");
+						$("#eventCategory-"+eventCategory_id).html("<i class='fas fa-toggle-off' aria-hidden='true' title='Inactive' status='Inactive'></i>");
 					}else if(resp['status']==1){
-						$("#brand-"+brand_id).html("<i class='fas fa-toggle-on' aria-hidden='true' title='Active' status='Active'></i>");
-					}
-
-				},error:function(){
-					alert("Error");
-				}
-			});
-		}
-	});
-
-
-	// Update Status in Sections Table Active or Inactive
-	//$(".updateSectionStatus").click(function(){
-	$(document).on("click",".updateSectionStatus",function(e){
-		//var status = $(this).text();
-		var status = $(this).children("i").attr("status");
-		//alert(status); return false;
-		var section_id = $(this).attr("section_id");
-		//alert(status +"&&"+section_id);
-		if(section_id){
-			$.ajax({
-				type:'post',
-				url:'/admin/update-section-status',
-				data:{status:status,section_id:section_id},
-				success:function(resp){
-					//alert(resp['status']);
-					//alert(resp['section_id']);
-					if(resp['status']==0){
-						$("#section-"+section_id).html("<i class='fas fa-toggle-off' aria-hidden='true' title='Inactive' status='Inactive'></i>");
-					}else if(resp['status']==1){
-						$("#section-"+section_id).html("<i class='fas fa-toggle-on' aria-hidden='true' title='Active' status='Active'></i>");
-					}
-
-				},error:function(){
-					alert("Error");
-				}
-			});
-		}
-	});
-
-
-	// Update Status in Category Table Active or Inactive
-	//$(".updateCategoryStatus").click(function(e){
-	$(document).on("click",".updateCategoryStatus",function(e){
-		//var status = $(this).text();
-		var status = $(this).children("i").attr("status");
-		//alert(status); return false;
-		var category_id = $(this).attr("category_id");
-		//alert(status +"&&"+category_id);
-		if(category_id){
-			$.ajax({
-				type:'post',
-				url:'/admin/update-category-status',
-				data:{status:status,category_id:category_id},
-				success:function(resp){
-					//alert(resp['status']);
-					//alert(resp['category_id']);
-					if(resp['status']==0){
-						$("#category-"+category_id).html("<i class='fas fa-toggle-off' aria-hidden='true' title='Inactive' status='Inactive'></i>");
-					}else if(resp['status']==1){
-						$("#category-"+category_id).html("<i class='fas fa-toggle-on' aria-hidden='true' title='Active' status='Active'></i>");
+						$("#eventCategory-"+eventCategory_id).html("<i class='fas fa-toggle-on' aria-hidden='true' title='Active' status='Active'></i>");
 					}
 				},error:function(){
 					alert("Error");
@@ -112,44 +52,26 @@ $(document).ready(function () {
 	});
 
 
-	//Append Categories Lavel 
-	$("#section_id").change(function(){
-		var section_id = $(this).val();
-		//alert(section_id);
-		$.ajax({
-			type:'post',
-			url:'/admin/append-categories-level',
-			data:{section_id:section_id},
-			success:function(resp){
-				$("#appendCategoriesLevel").html(resp);
-			},error:function(){
-				alert("Error");
-			}
-
-		});
-	});
-
-
-	// Update Status in Product Table Active or Inactive
-	//$(".updateProductStatus").click(function(e){
-	$(document).on("click",".updateProductStatus",function(e){
+	// Update Status in Event Table Active or Inactive
+	//$(".updateEventStatus").click(function(e){
+	$(document).on("click",".updateEventStatus",function(e){
 		//var status = $(this).text();
 		var status = $(this).children("i").attr("status");
 		//alert(status); return false;
-		var product_id = $(this).attr("product_id");
-		//alert(status +"&&"+product_id);
-		if(product_id){
+		var event_id = $(this).attr("event_id");
+		// alert(status +"&"+event_id);
+		if(event_id){
 			$.ajax({
 				type:'post',
-				url:'/admin/update-product-status',
-				data:{status:status,product_id:product_id},
+				url:'/admin/update-event-status',
+				data:{status:status,event_id:event_id},
 				success:function(resp){
-					//alert(resp['status']);
-					//alert(resp['product_id']);
+					// alert(resp['status']);
+					// alert(resp['event_id']);
 					if(resp['status']==0){
-						$("#product-"+product_id).html("<i class='fas fa-toggle-off' aria-hidden='true' title='Inactive' status='Inactive'></i>");
+						$("#event-"+event_id).html("<i class='fas fa-toggle-off' aria-hidden='true' title='Inactive' status='Inactive'></i>");
 					}else if(resp['status']==1){
-						$("#product-"+product_id).html("<i class='fas fa-toggle-on' aria-hidden='true' title='Active' status='Active'></i>");
+						$("#event-"+event_id).html("<i class='fas fa-toggle-on' aria-hidden='true' title='Active' status='Active'></i>");
 					}
 				},error:function(){
 					alert("Error");
@@ -159,26 +81,26 @@ $(document).ready(function () {
 	});
 
 
-	// Update Status in Attributes Table Active or Inactive
-	//$(".updateAttributeStatus").click(function(e){
-	$(document).on("click",".updateAttributeStatus",function(e){
+	// Update Status in News Category Table Active or Inactive
+	//$(".updateNewsCategoryStatus").click(function(e){
+	$(document).on("click",".updateNewsCategoryStatus",function(e){
 		//var status = $(this).text();
 		var status = $(this).children("i").attr("status");
 		//alert(status); return false;
-		var attribute_id = $(this).attr("attribute_id");
-		//alert(status +"&&"+attribute_id);
-		if(attribute_id){
+		var newsCategory_id = $(this).attr("newsCategory_id");
+		//alert(status +"&"+newsCategory_id);
+		if(newsCategory_id){
 			$.ajax({
 				type:'post',
-				url:'/admin/update-attribute-status',
-				data:{status:status,attribute_id:attribute_id},
+				url:'/admin/update-news-category-status',
+				data:{status:status,newsCategory_id:newsCategory_id},
 				success:function(resp){
-					//alert(resp['status']);
-					//alert(resp['attribute_id']);		
+					// alert(resp['status']);
+					// alert(resp['newsCategory_id']);
 					if(resp['status']==0){
-						$("#attribute-"+attribute_id).html("<i class='fas fa-toggle-off' aria-hidden='true' title='Inactive' status='Inactive'></i>");
+						$("#newsCategory-"+newsCategory_id).html("<i class='fas fa-toggle-off' aria-hidden='true' title='Inactive' status='Inactive'></i>");
 					}else if(resp['status']==1){
-						$("#attribute-"+attribute_id).html("<i class='fas fa-toggle-on' aria-hidden='true' title='Active' status='Active'></i>");
+						$("#newsCategory-"+newsCategory_id).html("<i class='fas fa-toggle-on' aria-hidden='true' title='Active' status='Active'></i>");
 					}
 				},error:function(){
 					alert("Error");
@@ -187,26 +109,27 @@ $(document).ready(function () {
 		}
 	});
 
-	// Update Status in Product Image Table Active or Inactive
-	//$(".updateImageStatus").click(function(e){
-	$(document).on("click",".updateImageStatus",function(e){
+
+	// Update Status in News Table Active or Inactive
+	//$(".updateNewsStatus").click(function(e){
+	$(document).on("click",".updateNewsStatus",function(e){
 		//var status = $(this).text();
 		var status = $(this).children("i").attr("status");
 		//alert(status); return false;
-		var image_id = $(this).attr("image_id");
-		//alert(status +"&&"+image_id);
-		if(image_id){
+		var news_id = $(this).attr("news_id");
+		// alert(status +"&"+news_id);
+		if(news_id){
 			$.ajax({
 				type:'post',
-				url:'/admin/update-image-status',
-				data:{status:status,image_id:image_id},
+				url:'/admin/update-news-status',
+				data:{status:status,news_id:news_id},
 				success:function(resp){
-					//alert(resp['status']);
-					//alert(resp['image_id']);		
+					// alert(resp['status']);
+					// alert(resp['news_id']);
 					if(resp['status']==0){
-						$("#image-"+image_id).html("<i class='fas fa-toggle-off' aria-hidden='true' title='Inactive' status='Inactive'></i>");
+						$("#news-"+news_id).html("<i class='fas fa-toggle-off' aria-hidden='true' title='Inactive' status='Inactive'></i>");
 					}else if(resp['status']==1){
-						$("#image-"+image_id).html("<i class='fas fa-toggle-on' aria-hidden='true' title='Active' status='Active'></i>");
+						$("#news-"+news_id).html("<i class='fas fa-toggle-on' aria-hidden='true' title='Active' status='Active'></i>");
 					}
 				},error:function(){
 					alert("Error");
@@ -214,6 +137,124 @@ $(document).ready(function () {
 			});
 		}
 	});
+
+
+	// Update Status in Subject Category Table Active or Inactive
+	//$(".updateSubjectCategoryStatus").click(function(e){
+	$(document).on("click",".updateSubjectCategoryStatus",function(e){
+		//var status = $(this).text();
+		var status = $(this).children("i").attr("status");
+		//alert(status); return false;
+		var subjectCategory_id = $(this).attr("subjectCategory_id");
+		// alert(status +"&"+subjectCategory_id);
+		if(subjectCategory_id){
+			$.ajax({
+				type:'post',
+				url:'/admin/update-subject-category-status',
+				data:{status:status,subjectCategory_id:subjectCategory_id},
+				success:function(resp){
+					// alert(resp['status']);
+					// alert(resp['subjectCategory_id']);
+					if(resp['status']==0){
+						$("#subjectCategory-"+subjectCategory_id).html("<i class='fas fa-toggle-off' aria-hidden='true' title='Inactive' status='Inactive'></i>");
+					}else if(resp['status']==1){
+						$("#subjectCategory-"+subjectCategory_id).html("<i class='fas fa-toggle-on' aria-hidden='true' title='Active' status='Active'></i>");
+					}
+				},error:function(){
+					alert("Error");
+				}
+			});
+		}
+	});
+
+
+	// Update Status in Staff Table Active or Inactive
+	//$(".updateStaffStatus").click(function(e){
+	$(document).on("click",".updateStaffStatus",function(e){
+		//var status = $(this).text();
+		var status = $(this).children("i").attr("status");
+		//alert(status); return false;
+		var staff_id = $(this).attr("staff_id");
+		// alert(status +"&"+staff_id);
+		if(staff_id){
+			$.ajax({
+				type:'post',
+				url:'/admin/update-staff-status',
+				data:{status:status,staff_id:staff_id},
+				success:function(resp){
+					// alert(resp['status']);
+					// alert(resp['staff_id']);
+					if(resp['status']==0){
+						$("#staff-"+staff_id).html("<i class='fas fa-toggle-off' aria-hidden='true' title='Inactive' status='Inactive'></i>");
+					}else if(resp['status']==1){
+						$("#staff-"+staff_id).html("<i class='fas fa-toggle-on' aria-hidden='true' title='Active' status='Active'></i>");
+					}
+				},error:function(){
+					alert("Error");
+				}
+			});
+		}
+	});
+
+
+	// Update Status in School Category Table Active or Inactive
+	//$(".updateSchoolCategoryStatus").click(function(e){
+	$(document).on("click",".updateSchoolCategoryStatus",function(e){
+		//var status = $(this).text();
+		var status = $(this).children("i").attr("status");
+		//alert(status); return false;
+		var schoolCategory_id = $(this).attr("schoolCategory_id");
+		// alert(status +"&"+schoolCategory_id);
+		if(schoolCategory_id){
+			$.ajax({
+				type:'post',
+				url:'/admin/update-school-category-status',
+				data:{status:status,schoolCategory_id:schoolCategory_id},
+				success:function(resp){
+					// alert(resp['status']);
+					// alert(resp['schoolCategory_id']);
+					if(resp['status']==0){
+						$("#schoolCategory-"+schoolCategory_id).html("<i class='fas fa-toggle-off' aria-hidden='true' title='Inactive' status='Inactive'></i>");
+					}else if(resp['status']==1){
+						$("#schoolCategory-"+schoolCategory_id).html("<i class='fas fa-toggle-on' aria-hidden='true' title='Active' status='Active'></i>");
+					}
+				},error:function(){
+					alert("Error");
+				}
+			});
+		}
+	});
+
+
+	// Update Status in Gallary Table Active or Inactive
+	//$(".updateGallaryStatus").click(function(e){
+	$(document).on("click",".updateGallaryStatus",function(e){
+		//var status = $(this).text();
+		var status = $(this).children("i").attr("status");
+		//alert(status); return false;
+		var gallary_id = $(this).attr("gallary_id");
+		// alert(status +"&"+gallary_id);
+		if(gallary_id){
+			$.ajax({
+				type:'post',
+				url:'/admin/update-gallary-status',
+				data:{status:status,gallary_id:gallary_id},
+				success:function(resp){
+					// alert(resp['status']);
+					// alert(resp['gallary_id']);
+					if(resp['status']==0){
+						$("#gallary-"+gallary_id).html("<i class='fas fa-toggle-off' aria-hidden='true' title='Inactive' status='Inactive'></i>");
+					}else if(resp['status']==1){
+						$("#gallary-"+gallary_id).html("<i class='fas fa-toggle-on' aria-hidden='true' title='Active' status='Active'></i>");
+					}
+				},error:function(){
+					alert("Error");
+				}
+			});
+		}
+	});
+
+
 
 
 	/*

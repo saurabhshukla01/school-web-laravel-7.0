@@ -12,6 +12,10 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        //
+    	// Hide Url from crsf token hidden
+        '/admin/update-event-category-status','/admin/update-event-status',
+        '/admin/update-news-category-status','/admin/update-news-status',
+        '/admin/update-subject-category-status','/admin/update-staff-status',
+        '/admin/update-school-category-status','/admin/update-gallary-status',
     ];
 }
